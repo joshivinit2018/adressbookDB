@@ -192,3 +192,119 @@ mysql> select * from addressbookDB order by City ASC;
 | Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 |
 +------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
 3 rows in set (0.02 sec)
+
+
+
+
+
+
+mysql> alter table addressbookDB add (type varchar(50) NOT NULL);
+Query OK, 0 rows affected (1.65 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 |      |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 |      |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 |      |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+------+
+
+mysql> update addressbookDB set type = 'Family' where id=2;
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 |        |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 |        |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+3 rows in set (0.04 sec)
+
+mysql> update addressbookDB set type = 'Friend' where id=3;
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 |        |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbookDB set type = 'Friend' where id=4;
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+
+3 rows in set (0.00 sec)
+
+mysql> alter table addressbookDB add (AddressBook varchar(50) NOT NULL);
+Query OK, 0 rows affected (1.72 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   | AddressBook |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |             |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend |             |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend |             |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbookDB set AddressBook = 'contact3' where id=4;
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   | AddressBook |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |             |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend |             |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend | contact3    |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbookDB set AddressBook = 'contact2' where id=3;
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   | AddressBook |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family |             |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend | contact2    |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend | contact3    |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbookDB set AddressBook = 'contact1' where id=2;
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id | type   | AddressBook |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 | Family | contact1    |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 | Friend | contact2    |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend | contact3    |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
+3 rows in set (0.00 sec)

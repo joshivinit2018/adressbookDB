@@ -61,3 +61,22 @@ mysql> DESCRIBE addressbookDB;
 
 
 
+mysql> insert into addressbookDB(First_Name,Last_Name,Address,City,State,Zip,Phone_Number,Email_Address)values
+    -> ('Vinit','Joshi','Ramnagar','kapashi','maharashtra',413218,7588111230,'josivin@gmail.com');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into addressbookDB(First_Name,Last_Name,Address,City,State,Zip,Phone_Number,Email_Address)values
+    -> ('Sujay','Joshi','Ramnagar','kapashi','maharashtra',413218,7588171240,'josivin@gmail.com');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select *from addressbookDB
+    -> select *from addressbookDB;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select *from addressbookDB' at line 2
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address     |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+
+| Vinit      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588111230 | josivin@gmail.com |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+
+2 rows in set (0.00 sec)

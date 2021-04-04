@@ -327,3 +327,20 @@ mysql> SELECT type,COUNT(First_Name) FROM addressbookDB GROUP BY type;
 
 
 
+
+mysql> insert into addressbookDB(First_Name,Last_Name,Address,City,State,Zip,Phone_Number,Email_Address,id,type,AddressBook)values
+    -> ('Sitaram','Patil','Shahunagar','gargoti','karnataka',513218,7588171240,'josivinassde@gmail.com',5,'Friend','contact4');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from addressbookDB;
++------------+-----------+------------+---------+-------------+--------+--------------+------------------------+----+--------+-------------+
+| First_Name | Last_Name | Address    | City    | State       | Zip    | Phone_Number | Email_Address          | id | type   | AddressBook |
++------------+-----------+------------+---------+-------------+--------+--------------+------------------------+----+--------+-------------+
+| Vaman      | Joshi     | Ramnagar   | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com      |  2 | Family | contact1    |
+| Sujay      | Joshi     | Ramnagar   | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com      |  3 | Friend | contact2    |
+| Vinit      | Joshi     | Rajnagar   | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com    |  4 | Friend | contact3    |
+| Sitaram    | Patil     | Shahunagar | gargoti | karnataka   | 513218 |   7588171240 | josivinassde@gmail.com |  5 | Friend | contact4    |
++------------+-----------+------------+---------+-------------+--------+--------------+------------------------+----+--------+-------------+
+4 rows in set (0.00 sec)
+
+

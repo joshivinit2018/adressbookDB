@@ -183,3 +183,12 @@ mysql> select COUNT(City)from addressbookDB;
 
 
 
+mysql> select * from addressbookDB order by City ASC;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 |
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+3 rows in set (0.02 sec)

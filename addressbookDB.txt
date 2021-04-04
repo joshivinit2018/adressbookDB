@@ -149,3 +149,37 @@ mysql> select * from addressbookDB;
 | Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |  3 |
 +------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
 2 rows in set (0.04 sec)
+
+
+
+
+
+
+
+
+mysql> insert into addressbookDB(First_Name,Last_Name,Address,City,State,Zip,Phone_Number,Email_Address)values
+    -> ('Vinit','Joshi','Rajnagar','kagal','maharashtra',413214,7588117230,'josiviwan@gmail.com');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address       | id |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+| Vaman      | Joshi     | Ramnagar | pune    | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  2 |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com   |  3 |
+| Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 |
++------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+
+3 rows in set (0.03 sec)
+
+mysql> select COUNT(City)from addressbookDB;
++-------------+
+| COUNT(City) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.06 sec)
+
+
+
+
+

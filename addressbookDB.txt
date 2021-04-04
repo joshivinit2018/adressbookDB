@@ -308,3 +308,22 @@ mysql> select * from addressbookDB;
 | Vinit      | Joshi     | Rajnagar | kagal   | maharashtra | 413214 |   7588117230 | josiviwan@gmail.com |  4 | Friend | contact3    |
 +------------+-----------+----------+---------+-------------+--------+--------------+---------------------+----+--------+-------------+
 3 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT type,COUNT(First_Name) FROM addressbookDB GROUP BY type;
++--------+-------------------+
+| type   | COUNT(First_Name) |
++--------+-------------------+
+| Family |                 1 |
+| Friend |                 2 |
++--------+-------------------+
+2 rows in set (0.05 sec)
+
+
+
+
+

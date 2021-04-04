@@ -80,3 +80,33 @@ mysql> select * from addressbookDB;
 | Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |
 +------------+-----------+----------+---------+-------------+--------+--------------+-------------------+
 2 rows in set (0.00 sec)
+
+
+
+mysql> ALTER TABLE addressbookDB ADD id int AUTO_INCREMENT PRIMARY KEY;
+Query OK, 0 rows affected (2.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address     | id |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+| Vaman      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588111230 | josivin@gmail.com |  1 |
+| Vaman      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |  2 |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |  3 |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+3 rows in set (0.00 sec)
+
+mysql> update addressbookDB SET First_Name='prabhakar' WHERE id=1;
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookDB;
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+| First_Name | Last_Name | Address  | City    | State       | Zip    | Phone_Number | Email_Address     | id |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+| prabhakar  | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588111230 | josivin@gmail.com |  1 |
+| Vaman      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |  2 |
+| Sujay      | Joshi     | Ramnagar | kapashi | maharashtra | 413218 |   7588171240 | josivin@gmail.com |  3 |
++------------+-----------+----------+---------+-------------+--------+--------------+-------------------+----+
+3 rows in set (0.00 sec)
